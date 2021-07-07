@@ -1,35 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
-import { AppRoutingModule,routingComponents } from './app-routing.module';
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestComponent } from './test/test.component';
-import { UpdateClientComponent } from './client/update-client/update-client.component';
-import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
-import { ClientHeaderComponent } from './client/client-header/client-header.component';
-import { EmployeeHeaderComponent } from './employee/employee-header/employee-header.component';
-
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeService } from './employee.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TestComponent,
-	routingComponents,
-    UpdateClientComponent,
-    UpdateEmployeeComponent,
-    ClientHeaderComponent,
-    EmployeeHeaderComponent,
-
+    EmployeeListComponent,
+    EmployeeDetailComponent,
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    HttpClientModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
